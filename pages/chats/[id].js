@@ -26,6 +26,7 @@ const Chat = ({ chat_id }) => {
     const chatWindowRef = useRef(null);
 
     useEffect(() => {
+        if(myId && chatData)
       chatWindowRef.current.scrollTo(0, chatWindowRef.current.scrollHeight);
     });
 
