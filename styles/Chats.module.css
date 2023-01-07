@@ -1,0 +1,250 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  height: 100vh;
+  background-image: linear-gradient(rgb(23, 4, 86), rgb(57, 1, 59));
+  font-size: calc(10px + min(1vw, 1vh));
+  box-sizing: border-box;
+  position: relative;
+}
+
+#addChat{
+  font-size: 2em;
+  border-radius: 5px;
+  width: 1.5em;
+  height: 1.5em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.trashIcon{
+  position: relative;
+  width: 2em;
+  height: 2em;
+  padding: .2em;
+  z-index: 200;
+  display: block;
+}
+
+.trashIcon img{
+  width: 100%;  
+  height: 100%;
+}
+
+.trashIcon::after{
+  position: absolute;
+  bottom: -1.8em;
+  font-size: .5em;
+  left: 0;
+  text-align: center;
+  width: 100%;
+  content:"delete";
+  height: 2em;
+}
+
+#shareIcon{
+  position: relative;
+  width: 2em;
+  height: 2em;
+  padding: .2em;
+  z-index: 200;
+}
+
+#shareIcon::after{
+  position: absolute;
+  bottom: -1.8em;
+  font-size: .5em;
+  left: 0;
+  text-align: center;
+  width: 100%;
+  content:"share";
+  height: 2em;
+}
+
+#shareIcon img{
+  width: 100%;
+  height: 100%;
+}
+
+#addChat:hover{
+  border: black solid 1px;
+  background-color: white;
+  color: black;
+}
+
+.center{
+  text-align: center;
+}
+
+.hidden{
+  display: none;
+}
+
+.light{
+  color: white;
+  cursor: pointer;
+  font-size: 1.5em;
+  margin-bottom: .5em;
+}
+
+.chatList{
+  width: 90%;
+  height: 90%;
+  border-radius: 10px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+}
+
+.chatList .header{
+  width: 100%;
+  height: 10%;
+  background-color: black;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  padding: 1em;
+  box-sizing: border-box;
+  align-items: center;
+}
+
+.listBody{
+  height: 100%;
+  background-color: rgba(18, 35, 97, 0.344);
+  position: relative;
+}
+
+.listTile{
+  display: flex;
+  position: relative;
+  padding: 0 1em;
+  width: 100%;
+  flex-direction: row;
+  align-items: center;
+  height: 5em;
+  border-bottom: 1px solid black;
+  box-sizing: border-box;
+  font-size: 1.2em;
+  cursor: pointer;
+}
+
+.tileInfo{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.tileOptions{
+  display: flex;
+  width: 30%;
+  height: 100%;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.updatingScreen{
+  position: absolute;
+  z-index: 10000;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  backdrop-filter: blur(10px);
+  font-size: 5em;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.listTile p:hover{
+background-color: white;
+color: black;
+}
+
+.listTile:hover{
+  background-image: linear-gradient( rgb(5, 1, 59),rgb(35, 35, 35));
+  box-shadow: inset 0 0 .1em .1em black;
+  color: white;
+}
+
+.trashIcon:hover{
+  background-color: white;
+  border-radius: 10px;
+  padding: .2em;
+}
+
+#shareIcon:hover{
+  background-color: white;
+  border-radius: 50%;
+  padding: .2em;
+}
+
+.listTile span{
+  font-weight: bold;
+}
+
+.newSubjectBackdrop{
+  position: absolute;
+  z-index: 5;
+  height: 100%;
+  width: 100%;
+  backdrop-filter: blur(10px);
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.247);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.newSubject{
+  width: 80%;
+  height: 80%;
+  background-color: rgb(0, 0, 64);
+  border-radius: 20px;
+  padding: 5em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.newSubject input{
+  font-size: 2em;
+  margin-bottom: 1em;
+}
+
+.newSubject button{
+  font-size: 1.5em;
+  padding: .5em;
+  border-radius: 10px;
+}
+
+
+@media (max-aspect-ratio: 1/1) {
+
+  .main{
+    padding: .2em;
+  }
+
+  .newSubject{
+    padding: .5em;
+  }
+  .main input{
+    width: 100%;
+    font-size: 2em;
+  }
+
+  .updatingScreen{
+    font-size: 3em;
+  }
+}
+
